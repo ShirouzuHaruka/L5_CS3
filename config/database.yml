@@ -8,6 +8,10 @@ default: &default
   adapter: sqlite3
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
+  database: test1004_render
+  username: test1004_render_user
+  password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
 
 development:
   <<: *default
@@ -23,3 +27,4 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
